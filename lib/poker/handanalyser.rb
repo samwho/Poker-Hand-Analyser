@@ -1,5 +1,30 @@
 require_relative 'numbersandsuits'
 
+# The HandAnalyser is a static class that will take an array of Card objects
+# and extract the ranked hands from them.
+#
+# Usage:
+#
+#   hand     = [Card.new("2C"), Card.new("2H")] # Array of Cards
+#   analysis = HandAnalyser.analyse hand
+#
+#   puts analysis.inspect
+#
+#   # I've shortened the cards to just strings for ease of reading
+#   # so note that these are arrays of Card objects.
+#   #
+#   # {
+#   #   :hand             => [["2C", "2H"]]
+#   #   :pairs            => [["2C", "2H"]]
+#   #   :trips            => []
+#   #   :quads            => []
+#   #   :flushes          => []
+#   #   :straights        => []
+#   #   :straight_flushes => []
+#   # }
+#
+# Normally you would not do this manually. See the Hand class for
+# more details.
 class HandAnalyser
   extend NumbersAndSuits
 
